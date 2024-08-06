@@ -5,3 +5,4 @@ CREATE TABLE enrolment
     CONSTRAINT pk_enrolment PRIMARY KEY (st_id, program_id)
 );
 
+/
