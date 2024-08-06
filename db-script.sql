@@ -16,6 +16,14 @@ INSERT INTO exam (exam_code, passing_score, module_id) VALUES
                                                            ('EXM009', 60, 'MOD009'),
                                                            ('EXM010', 50, 'MOD010');
 
+CREATE TABLE student_exam(
+    exam_code VARCHAR(10) NOT NULL ,
+    student_id VARCHAR(10) NOT NULL ,
+    marks INT NOT NULL ,
+    CONSTRAINT fk_exam_code FOREIGN KEY (exam_code) REFERENCES exam(exam_code),
+    CONSTRAINT fk_student_id FOREIGN KEY (student_id) REFERENCES student(id)
+
+);
 
 CREATE TABLE student (
     id VARCHAR(5) PRIMARY KEY ,
