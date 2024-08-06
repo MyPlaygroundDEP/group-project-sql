@@ -53,3 +53,47 @@ INSERT INTO student (id, name) VALUES
                                    ('S020', 'Chamodika Rajapaksha');
 
 
+
+
+INSERT INTO module (id,name,credits) VALUES ('MOD001', 'OOP', 4),
+                                            ('MOD002', 'DBMS', 4),
+                                            ('MOD003', 'IT', 3),
+                                            ('MOD004', 'ENGLISH',2),
+                                            ('MOD005', 'WEB',2),
+                                            ('MOD006', 'GIT',2),
+                                            ('MOD007', 'JAVA SE',4),
+                                            ('MOD008', 'JAVA EE',4),
+                                            ('MOD009', 'JS',4),
+                                            ('MOD010', 'HIBERNATE',4);
+
+INSERT INTO program_module (program_id, module_id) VALUES
+                                   ('POO1', 'MOD001'),
+                                   ('POO1', 'MOD002'),
+                                   ('POO2', 'MOD001'),
+                                   ('POO1', 'MOD003'),
+                                   ('POO1', 'MOD004'),
+                                   ('POO1', 'MOD005'),
+                                   ('POO2', 'MOD002'),
+                                   ('POO2', 'MOD003'),
+                                   ('POO2', 'MOD004'),
+                                   ('POO2', 'MOD005'),
+                                   ('POO1', 'MOD006'),
+                                   ('POO1', 'MOD007'),
+                                   ('POO1', 'MOD008'),
+                                   ('POO3', 'MOD001'),
+                                   ('POO1', 'MOD009'),
+                                   ('POO2', 'MOD006'),
+                                   ('POO1', 'MOD010'),
+                                   ('POO3', 'MOD002'),
+                                   ('POO3', 'MOD003'),
+                                   ('POO2', 'MOD007'),
+                                   ('POO2', 'MOD008'),
+                                   ('POO2', 'MOD009'),
+                                   ('POO2', 'MOD010'),
+                                   ('POO3', 'MOD004'),
+                                   ('POO3', 'MOD005'),
+                                   ('POO3', 'MOD006'),
+                                   ('POO3', 'MOD007'),
+                                   ('POO3', 'MOD008'),
+                                   ('POO3', 'MOD009'),
+                                   ('POO3', 'MOD010'),
