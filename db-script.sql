@@ -171,3 +171,9 @@ CREATE TABLE student_exam(
     CONSTRAINT fk_student_id FOREIGN KEY (enrollment_id) REFERENCES enrollment(id)
 
 );
+CREATE TABLE module
+(
+    id      VARCHAR(10) PRIMARY KEY,
+    name    VARCHAR(100),
+    credits INT
+);
