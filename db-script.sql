@@ -3,7 +3,7 @@ CREATE TABLE student (
     name VARCHAR(20) NOT NULL ,
 );
 
-INSERT INTO student VALUES
+INSERT INTO student(id, name) VALUES
                         ('C001', 'stud-1'),
                         ('C002', 'stud-2'),
                         ('C003', 'stud-3'),
