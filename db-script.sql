@@ -1,3 +1,9 @@
+CREATE TABLE module
+(
+    id      VARCHAR(10) PRIMARY KEY,
+    name    VARCHAR(100),
+    credits INT
+);
 CREATE TABLE program
 (
     id   VARCHAR(10) PRIMARY KEY,
