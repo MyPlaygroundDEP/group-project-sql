@@ -4,7 +4,7 @@ CREATE TABLE batch (
                        program_id VARCHAR(50) NOT NULL
 );
 
-INSERT INTO batch VALUES
+INSERT INTO batch(id, heads_count, program_id) VALUES
                         ('B001', 'stud-1', 'Prog-1'),
                         ('B002', 'stud-2', 'Prog-2'),
                         ('B003', 'stud-3', 'Prog-3'),
