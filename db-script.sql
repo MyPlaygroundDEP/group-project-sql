@@ -32,3 +32,14 @@ CREATE TABLE student (
     id VARCHAR(5) PRIMARY KEY ,
     name VARCHAR(20) NOT NULL ,
 );
+
+INSERT INTO module (id,name,credits) VALUES ('MOD001', 'OOP', 4),
+                                            ('MOD002', 'DBMS', 4),
+                                            ('MOD003', 'IT', 3),
+                                            ('MOD004', 'ENGLISH',2),
+                                            ('MOD005', 'WEB',2),
+                                            ('MOD006', 'GIT',2),
+                                            ('MOD007', 'JAVA SE',4),
+                                            ('MOD008', 'JAVA EE',4),
+                                            ('MOD009', 'JS',4),
+                                            ('MOD0010', 'HIBERNATE',4);
