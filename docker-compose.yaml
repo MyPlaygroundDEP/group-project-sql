@@ -1,0 +1,10 @@
+services:
+  container:
+    environment:
+      MARIADB_ROOT_PASSWORD: mysql
+    ports:
+      - 5000:3306
+    volumes:
+      - ~/mysql:/var/lib/mysql1
+    image: mysql
+    container_name: mysql_container_1
