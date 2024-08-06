@@ -13,6 +13,8 @@ CREATE TABLE program_module
     CONSTRAINT fk_module_id FOREIGN KEY (module_id) REFERENCES module(id),
     CONSTRAINT pk_program_module PRIMARY KEY (program_id,module_id)
 );
+
+INSERT INTO program (id,name) VALUES ('P001', 'CMJD'),('P002', 'GDSE'),('P003', 'DEP');
 CREATE TABLE program
 (
     id   VARCHAR(10) PRIMARY KEY,
