@@ -177,3 +177,12 @@ CREATE TABLE module
     name    VARCHAR(100),
     credits INT
 );
+
+CREATE TABLE program_module
+(
+    program_id VARCHAR(10) NOT NULL ,
+    module_id VARCHAR(10) NOT NULL ,
+    CONSTRAINT fk_program_id FOREIGN KEY (program_id) REFERENCES program(id),
+    CONSTRAINT fk_module_id FOREIGN KEY (module_id) REFERENCES module(id),
+    CONSTRAINT pk_program_module PRIMARY KEY (program_id,module_id)
+);
