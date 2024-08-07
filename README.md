@@ -1,59 +1,76 @@
+```markdown
+# MySQL Container Setup with Docker Compose
 
-# MySQL Docker Setup
+This guide explains how to set up a MySQL container using Docker Compose, connect to it via MySQL command-line client, and run MySQL scripts.
 
-This repository provides a simple setup to run a MySQL container using Docker and Docker Compose.
+## Step 1: Clone the Repository
 
-## Prerequisites
+Clone the repository to your local machine:
 
-- Docker installed on your machine
-- Docker Compose installed
+```bash
+git clone https://github.com/MyPlaygroundDEP/group-project-sql.git
+cd group-project-sql
+```
 
-## Configuration
+## Step 2: Start the MySQL Container
 
-The `docker-compose.yml` file contains the configuration to set up a MySQL container with the following details:
+To start the MySQL container, ensure Docker is running and execute the following command:
 
-- **Container Name:** `mysql_container_1`
-- **MySQL Root Password:** `mysql`
-- **Ports:** `3306` (MySQL default) exposed on `5000` on the host machine
-- **Volumes:**
-  - Local directory `~/mysql` is mounted to `/var/lib/mysql` in the container. This is where MySQL data is stored persistently on your local machine.
+```bash
+docker-compose up
+```
 
-## How to Run
+This command will:
 
-1. **Clone the Repository**:
-   ```sh
-   git clone <repository-url>
-   cd <repository-directory>
-   ```
+- Start the MySQL container named `mysql_container_1`.
+- Map the container's MySQL port `3306` to port `5000` on the host.
+- Store MySQL data in the `~/mysql` directory on the host.
 
-2. **Start the MySQL Container**:
-   ```sh
-   docker-compose up -d
-   ```
-   The `-d` flag runs the container in detached mode, meaning it will run in the background.
+## Step 3: Connect to the MySQL Database
 
-3. **Check the Container Status**:
-   ```sh
-   docker ps
-   ```
-   This will display the running containers. You should see `mysql_container_1` in the list.
+You can connect to the MySQL database using the MySQL command-line client. Run:
 
-4. **Stop the MySQL Container**:
-   ```sh
-   docker-compose down
-   ```
-   This command stops and removes the container along with the network created by Docker Compose.
+```bash
+mysql -h 127.0.0.1 -P 5000 -u root -pmysql
+```
 
-## Accessing MySQL
+- **-h 127.0.0.1:** Specifies the hostname (localhost).
+- **-P 5000:** Specifies the port number (5000).
+- **-u root:** Specifies the username (root).
+- **-pmysql:** Specifies the password (mysql).
 
-You can connect to the MySQL database using the following details:
+## Step 4: Run MySQL Scripts
 
-- **Host:** `localhost`
-- **Port:** `5000`
-- **Username:** `root`
-- **Password:** `mysql`
+To execute a MySQL script, use the following command:
 
-## Notes
+```bash
+mysql -h 127.0.0.1 -P 5000 -u root -pmysql < /path/to/your/create_database.sql
+```
 
-- The MySQL data is stored persistently in the `~/mysql` directory on your local machine.
-- Ensure the port `5000` is available on your machine, or change it to another port if needed.
+Replace `/path/to/your/create_database.sql` with the actual path to your `.sql` file. This command connects to the MySQL server and executes the SQL commands in your script.
+
+## Step 5: Create a Database Using MySQL Client
+
+Once connected to the MySQL client, you can create a new database with the following command:
+
+```sql
+CREATE DATABASE my_database;
+```
+
+Replace `my_database` with your desired database name.
+
+## Step 6: Stop the Container
+
+To stop the container, run:
+
+```bash
+docker-compose down
+```
+
+This command stops and removes the container but keeps the data stored in `~/mysql`.
+
+## Additional Information
+
+- **Volumes:** MySQL data is persisted in the `~/mysql` directory on your local machine. This ensures that your data remains even if the container is stopped or removed.
+- **Ports:** The MySQL service in the container is accessible on port `5000` of the host machine.
+
